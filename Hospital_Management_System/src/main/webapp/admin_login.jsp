@@ -22,8 +22,13 @@
 				<div class="card paint-card">
 					<div class="card-body">
 						<p class="fs-4 text-center">Admin Login</p>
-
-						<form action="#" method="post">
+						
+						<c:if test="${ not empty invalidMsg}">
+							<p class="text-center text-danger fs-5">${invalidMsg}</p>
+							<c:remove var="${invalidMsg}" scope="session"/>
+						</c:if> 
+						
+						<form action="adminLogin" method="post">
 							<div class="mb-3">
 								<label class="form-label">Email Address</label> <input required
 									name="email" type="email" class="form-control">

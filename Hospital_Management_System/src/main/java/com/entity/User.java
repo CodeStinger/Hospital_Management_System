@@ -5,6 +5,11 @@ public class User {
 	private String fullName;
 	private String email;
 	private String password;
+	
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public User(String fullName, String email, String password) {
 		super();
