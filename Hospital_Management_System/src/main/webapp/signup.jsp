@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +26,16 @@
 				<div class="card paint-card">
 					<div class="card-body">
 						<p class="fs-4 text-center">User Registration</p>
-
-						<form action="#" method="post">
+						
+						<c:if test="${ not empty sucMsg}">
+							<p class="test-center text-success fs-5">${sucMsg}</p>
+							<c:remove var="${sucMsg}"/>
+						</c:if> 
+						<c:if test="${ not empty errorMsg}">
+							<p class="test-center text-danger fs-5">${errorMsg}</p>
+							<c:remove var="${errorMsg}"/>
+						</c:if>
+						<form action="user_register" method="post">
 							<div class="mb-3">
 								<label class="form-label">Full Name</label> <input required
 									name="fullname" type="text" class="form-control">

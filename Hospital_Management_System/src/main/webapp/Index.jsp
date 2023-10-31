@@ -1,3 +1,5 @@
+<%@page import="com.db.DBConnect" %>
+<%@page import="java.sql.Connection" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -14,7 +16,8 @@
 </head>
 <body>
 	<%@include file="component/NavBar.jsp"%>
-
+	<%Connection conn = DBConnect.getConn(); %>
+	
 	<div id="carouselExampleIndicators" class="carousel slide"
 		data-bs-ride="carousel">
 		<div class="carousel-indicators">
@@ -123,7 +126,7 @@
 					<div class="card-body text-center">
 						<img alt="this is first doctor" src="img/doc1.jpeg" width="230px"
 							height="300px">
-						<p class="fw-bold fs-5">Mr. ABC DEF</p>
+						<p class="fw-bold fs-5">Mrs. Janhavi Khadsare</p>
 						<p class="fs-7">(CEO & Chairman)</p>
 					</div>
 				</div>
@@ -133,7 +136,7 @@
 					<div class="card-body text-center">
 						<img alt="this is first doctor" src="img/doc2.jpeg" width="230px"
 							height="300px">
-						<p class="fw-bold fs-5">Mr. DEF GHI</p>
+						<p class="fw-bold fs-5">Mrs. Lilly Rastogi</p>
 						<p class="fs-7">(Chief Doc)</p>
 					</div>
 				</div>
@@ -144,8 +147,8 @@
 					<div class="card-body text-center">
 						<img alt="this is first doctor" src="img/doc3.jpeg" width="230px"
 							height="300px">
-						<p class="fw-bold fs-5">Mr. GHI JKL</p>
-						<p class="fs-7">(Compounder)</p>
+						<p class="fw-bold fs-5">Mr. Jonhy Jones</p>
+						<p class="fs-7">(Chief Doc)</p>
 					</div>
 				</div>
 			</div>
@@ -154,8 +157,8 @@
 					<div class="card-body text-center">
 						<img alt="this is first doctor" src="img/doc4.jpeg" width="230px"
 							height="300px">
-						<p class="fw-bold fs-5">Mr. JKL MNO</p>
-						<p class="fs-7">(Compounder)</p>
+						<p class="fw-bold fs-5">Mrs. Miguel Mills </p>
+						<p class="fs-7">(Assistant Doc)</p>
 					</div>
 				</div>
 			</div>
