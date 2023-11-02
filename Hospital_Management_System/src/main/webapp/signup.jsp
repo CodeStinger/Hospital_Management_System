@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,11 +29,11 @@
 						
 						<c:if test="${ not empty sucMsg}">
 							<p class="test-center text-success fs-5">${sucMsg}</p>
-							<c:remove var="${sucMsg}"/>
+							<c:remove var="sucMsg" scope="session"/>
 						</c:if> 
 						<c:if test="${ not empty errorMsg}">
 							<p class="test-center text-danger fs-5">${errorMsg}</p>
-							<c:remove var="${errorMsg}"/>
+							<c:remove var="errorMsg" scope="session"/>
 						</c:if>
 						<form action="user_register" method="post">
 							<div class="mb-3">
