@@ -28,11 +28,11 @@
 						<p class="fs-4 text-center">User Registration</p>
 						
 						<c:if test="${ not empty sucMsg}">
-							<p class="test-center text-success fs-5">${sucMsg}</p>
+							<p class="text-center text-success fs-5">${sucMsg}</p>
 							<c:remove var="sucMsg" scope="session"/>
 						</c:if> 
 						<c:if test="${ not empty errorMsg}">
-							<p class="test-center text-danger fs-5">${errorMsg}</p>
+							<p class="text-center text-danger fs-5">${errorMsg}</p>
 							<c:remove var="errorMsg" scope="session"/>
 						</c:if>
 						<form action="user_register" method="post">
