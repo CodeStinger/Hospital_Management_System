@@ -8,9 +8,9 @@ public class Specialist {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Specialist(int id, String specialistName) {
+	public Specialist(String specialistName) {
 		super();
-		this.id = id;
+		
 		this.specialistName = specialistName;
 	}
 
