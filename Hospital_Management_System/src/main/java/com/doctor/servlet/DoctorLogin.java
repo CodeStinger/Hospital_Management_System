@@ -10,10 +10,10 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 import com.dao.doctorDAO;
-import com.dao.userDAO;
+
 import com.db.DBConnect;
 import com.entity.Doctor;
-import com.entity.User;
+
 
 /**
  * Servlet implementation class doctorLogin
@@ -43,7 +43,7 @@ public class DoctorLogin extends HttpServlet {
 			Doctor doctor= dao.login(email, password);
 			
 			if(doctor != null) {
-				session.setAttribute("UserObj", doctor);
+				session.setAttribute("DoctorObj", doctor);
 				response.sendRedirect("doctor/index.jsp");
 			}else {
 				session.setAttribute("errorMsg", "Invalid Doctor");

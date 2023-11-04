@@ -19,11 +19,20 @@
 	<div class="container p-5">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
-				
+
 				<div class="card paint-card">
 					<div class="card-body">
 						<p class="fs-4 text-center">Doctor Login</p>
-
+						
+						<c:if test="${ not empty sucMsg}">
+							<p class="text-center text-success fs-5s">${sucMsg}</p>
+							<c:remove var="sucMsg" scope="session" />
+						</c:if>
+						<c:if test="${ not empty errorMsg}">
+							<p class="text-center text-danger fs-5">${errorMsg}</p>
+							<c:remove var="errorMsg" scope="session" />
+						</c:if>
+						
 						<form action="doctorLogin" method="post">
 							<div class="mb-3">
 								<label class="form-label">Email Address</label> <input required
