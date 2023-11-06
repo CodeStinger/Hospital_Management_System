@@ -33,9 +33,9 @@
 
 				<c:if test="${not empty UserObj}">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Apppointment</a></li>
+						aria-current="page" href="user_appointment.jsp">Apppointment</a></li>
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">view Apppointment</a></li>
+						aria-current="page" href="view_appointment.jsp">view Apppointment</a></li>
 					
 						<div class="dropdown">
 							<button class="btn btn-success dropdown-toggle" type="button"
