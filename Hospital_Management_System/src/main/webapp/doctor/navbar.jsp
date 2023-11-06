@@ -27,7 +27,7 @@
 						aria-expanded="false"><i class="fas fa-user-md"></i>${DoctorObj.fullname}</button>
 					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 					<li><a class="dropdown-item" href="#">Edit Profile</a></li>
-						<li><a class="dropdown-item" href="#">Logout</a></li>
+						<li><a class="dropdown-item" href="../doctorLogout">Logout</a></li>
 					</ul>
 				</div>
 			</form>
