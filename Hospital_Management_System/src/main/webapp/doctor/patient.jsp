@@ -84,7 +84,7 @@
  }
  %>
 									</td>
-									<td><a href="#" class="btn btn-success btn-5m">Comment</a></td>
+									<td><a href="comment.jsp?id=<%=ap.getId()%>" class="btn btn-success btn-5m"><i class="fa-regular fa-comment"></i>Comment</a></td>
 
 								</tr>
 								<%
