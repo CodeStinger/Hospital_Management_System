@@ -14,7 +14,7 @@
 				<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="index.jsp">Home</a></li>
 				<li class="nav-item"><a class="nav-link active"
-					aria-current="page" href="doctor.jsp">Patient</a></li>
+					aria-current="page" href="patient.jsp">Patient</a></li>
 					<li class="nav-item"><a class="nav-link active"
 					aria-current="page" href="viewDoctor.jsp">View Patient</a></li>
 			
