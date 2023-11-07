@@ -84,8 +84,18 @@
  }
  %>
 									</td>
-									<td><a href="comment.jsp?id=<%=ap.getId()%>" class="btn btn-success btn-5m"><i class="fa-regular fa-comment"></i>Comment</a></td>
-
+									<td>
+										<%
+										if (ap.getStatus().equals("Pending")) {
+										%> <a href="comment.jsp?id=<%=ap.getId()%>"
+										class="btn btn-success btn-5m"><i
+											class="fa-regular fa-comment"></i>Comment</a> <%
+ } else {
+ %> <a href="#" class="btn btn-primary btn-5m disabled"><i
+											class="fa-regular fa-comment"></i>Commented</a> <%
+ }
+ %>
+									</td>
 								</tr>
 								<%
 								}

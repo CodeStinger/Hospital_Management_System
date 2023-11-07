@@ -9,12 +9,12 @@
 <head>
 <style type="text/css">
 .paint-card {
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4)
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .backImg {
 	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-		url(hospital.jpg);
+		url(img/hospital.jpeg);
 	height: 20vh;
 	width: 100%;
 	background-size: cover;
@@ -49,7 +49,7 @@
 						appointmentDAO dao = new appointmentDAO(DBConnect.getConn());
 						Appointment ap = dao.getAppointmentById(id);
 						%>
-						<form action="comment" class="row" method="post">
+						<form action="../updateStatus" class="row" method="post">
 							<div class="col-md-6">
 								<label class="form-label" for="inputEmail4">Patient Name</label> <input
 									readonly value="<%=ap.getFullname() %>" name="fullname" type="text"
@@ -76,7 +76,7 @@
 							</div>
 							<input type="hidden" name="id" value="<%=ap.getId()%>">
 							<input type="hidden" name="did" value="<%=ap.getDoctorid()%>">
-							<button class="mt-3 btn btn-primary col-md-6 offset-md-3">Comment</button>
+							<button class="mt-3 btn btn-success col-md-6 offset-md-3">Comment</button>
 						</form>
 					</div>
 				</div>

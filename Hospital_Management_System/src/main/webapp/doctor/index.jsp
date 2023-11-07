@@ -24,22 +24,22 @@
 
 	<div class="container p-5">
 		<div class="row">
-			<div class="col-md-4 offset-md-2">
+			<div class="col-md-4 offset-md-1">
 				<div class="card paint-card">
 					<div class="card-body text-center text-success">
 						<i class="fas fa-user-md fa-3x"></i><br>
-						<p class="fs-4 text-center">Doctor</p>
-						<br>12
+						<p class="fs-4 text-center">Doctor<br>12</p>
+						
 					</div>
 				</div>
 			</div>
 
-			<div class="col-md-4 offset-md-2">
+			<div class="col-md-4 offset-md-1">
 				<div class="card paint-card">
 					<div class="card-body text-center text-success">
 						<i class="fa-regular fa-calendar-check fa-3x"></i><br>
-						<p class="fs-4 text-center">Total Appointment</p>
-						<br>120
+						<p class="fs-4 text-center">Total Appointment<br>120</p>
+						
 					</div>
 				</div>
 			</div>

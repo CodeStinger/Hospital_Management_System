@@ -17,7 +17,7 @@
 
 .backImg {
 	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-		url(hospital.jpg);
+		url(img/hospital.jpeg);
 	height: 20vh;
 	width: 100%;
 	background-size: cover;
