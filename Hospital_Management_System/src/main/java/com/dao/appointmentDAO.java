@@ -148,4 +148,26 @@ public Appointment getAppointmentById(int id){
 	
 	return ap;
 }
+
+public boolean updateCommentStatus(int id, int did, String comment) {
+	boolean f = false;
+	
+	try {
+		String sql = "UPDATE appointment SET status=? WHERE id=? AND doctorid=?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, comment);
+		ps.setInt(2, id);
+		ps.setInt(3, did);
+		
+		int i = ps.executeUpdate();
+		if(i==1) {
+			f = true;
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+		e.printStackTrace();
+	}
+	
+	return f;
+}
 }
