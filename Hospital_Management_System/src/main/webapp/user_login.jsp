@@ -27,6 +27,7 @@
 						<c:if test="${ not empty sucMsg}">
 							<p class="text-center text-success fs-5">${sucMsg}</p>
 							<c:remove var="sucMsg" scope="session"/>
+							<c:remove var="UserObj" scope="session"/>
 						</c:if>
 						<c:if test="${ not empty errorMsg}">
 							<p class="text-center text-danger fs-5">${errorMsg}</p>
