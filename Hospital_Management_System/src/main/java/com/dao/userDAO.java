@@ -59,4 +59,21 @@ public class userDAO {
 		
 		return u;
 	}
+	
+	public int getUserCount() {
+		int i = 0;
+		
+		try {
+			String sql = "SELECT count(id) FROM user";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs =ps.executeQuery();
+			while(rs.next()) {
+				i = rs.getInt("count(id)");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return i;
+	}
 }

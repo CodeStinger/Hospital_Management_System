@@ -204,4 +204,39 @@ public List<Appointment> getAllAppointments() {
 	
 	return list;
 }
+public int getAppointmentCount() {
+	int i = 0;
+	
+	try {
+		String sql = "SELECT count(id) FROM appointment";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ResultSet rs =ps.executeQuery();
+		while(rs.next()) {
+			i = rs.getInt("count(id)");
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+		e.printStackTrace();
+	}
+	return i;
+}
+
+
+public int getAppointmentCountForSpecificDoctor(int did) {
+	int i = 0;
+	
+	try {
+		String sql = "SELECT count(id) FROM appointment WHERE doctorid=?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, did);
+		ResultSet rs =ps.executeQuery();
+		while(rs.next()) {
+			i = rs.getInt("count(id)");
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+		e.printStackTrace();
+	}
+	return i;
+}
 }

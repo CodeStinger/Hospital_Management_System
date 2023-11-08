@@ -63,4 +63,21 @@ public class specialistDAO {
 		
 		return specialists;
 	}
+	
+	public int getSpecialistCount() {
+		int i = 0;
+		
+		try {
+			String sql = "SELECT count(id) FROM specialist";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs =ps.executeQuery();
+			while(rs.next()) {
+				i = rs.getInt("count(id)");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return i;
+	}
 }
