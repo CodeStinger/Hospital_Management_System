@@ -1,3 +1,5 @@
+<%@page import="com.entity.Appointment"%>
+<%@page import="com.dao.appointmentDAO"%>
 <%@page import="com.db.DBConnect"%>
 <%@page import="com.entity.Doctor"%>
 <%@page import="java.util.List"%>
@@ -9,7 +11,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>view doctor</title>
+<title>view patient</title>
 
 <style type="text/css">
 .paint-card {
@@ -27,8 +29,8 @@
 			<div class="col-md-12">
 				<div class="card paint-card">
 					<div class="card-body">
-						<p class="fs-3 text-center">Doctor Details</p>
-						
+						<p class="fs-3 text-center">Patient Details</p>
+
 						<c:if test="${ not empty sucMsg}">
 							<p class="text-center text-success fs-5">${sucMsg}</p>
 							<c:remove var="sucMsg" scope="session" />
@@ -37,39 +39,53 @@
 							<p class="text-center text-danger fs-5">${errorMsg}</p>
 							<c:remove var="errorMsg" scope="session" />
 						</c:if>
-						
+
 						<table class="table">
 							<thead>
 								<tr>
 									<th scope="col">Full Name</th>
-									<th scope="col">DOB</th>
-									<th scope="col">Qualification</th>
-									<th scope="col">Specialization</th>
+									<th scope="col">Gender</th>
+									<th scope="col">Age</th>
+									<th scope="col">Appointment</th>
 									<th scope="col">Email</th>
 									<th scope="col">Mob No</th>
-									<th scope="col">Action</th>
+									<th scope="col">Disease</th>
+									<th scope="col">Doctor Name</th>
+									<th scope="col">Address</th>
+									<th scope="col">Status</th>
 								</tr>
 							</thead>
 							<tbody>
-								<%
-								doctorDAO dao2 = new doctorDAO(DBConnect.getConn());
-								List<Doctor> list2 = dao2.getAllDoctor();
-
-								for (Doctor d : list2) {
-								%>
+							
+							<%appointmentDAO dao = new appointmentDAO(DBConnect.getConn()); 
+							List<Appointment> list = dao.getAllAppointments();
+							
+							for(Appointment ap : list){
+								doctorDAO daod = new doctorDAO(DBConnect.getConn());
+								Doctor d = daod.getDoctorById(ap.getDoctorid());
+							
+							%>
 								<tr>
-									<td><%=d.getFullname()%></td>
-									<td><%=d.getDob()%></td>
-									<td><%=d.getQualification()%></td>
-									<td><%=d.getSpecialist()%></td>
-									<td><%=d.getEmail()%></td>
-									<td><%=d.getMob()%></td>
-									<td><a href="editDoctor.jsp?id=<%=d.getId()%>"
-										class="btn btn-sm btn-primary">Edit</a> <a href="../deleteDoctor?id=<%=d.getId()%>"
-										class="btn btn-sm btn-danger">Delete</a></td>
+									<td><%=ap.getFullname() %></td>
+									<td><%=ap.getGender() %></td>
+									<td><%=ap.getAge() %></td>
+									<td><%=ap.getDate() %></td>
+									<td><%=ap.getEmail() %></td>
+									<td><%=ap.getPhone() %></td>
+									<td><%=ap.getDisease() %></td>
+									<td><%=d.getFullname() %></td>
+									<td><%=ap.getAddress() %></td>
+									<td>
+									<%if(ap.getStatus().equals("Pending")){
+									%>
+									<a href="#" class="btn btn-5m btn-warning">Pending</a>
+									<%}else{ %>
+									<%=ap.getStatus() %>
+									<%} %>
+									</td>
 								</tr>
 								<%
-								}
+							}
 								%>
 							</tbody>
 						</table>
