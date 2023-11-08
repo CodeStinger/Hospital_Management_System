@@ -1,3 +1,8 @@
+<%@page import="com.dao.userDAO"%>
+<%@page import="com.dao.specialistDAO"%>
+<%@page import="com.dao.appointmentDAO"%>
+<%@page import="com.dao.doctorDAO"%>
+<%@page import="com.db.DBConnect"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -42,7 +47,9 @@
 					<div class="card-body text-center text-success">
 						<i class="fas fa-user-md fa-3x"></i><br>
 						<p class="text-center fs-4">
-							Doctor<br>5
+							Doctor<br><%doctorDAO dao = new doctorDAO(DBConnect.getConn()); 
+							
+							%><%=dao.getDoctorCount() %>
 						</p>
 					</div>
 				</div>
@@ -52,7 +59,8 @@
 					<div class="card-body text-center text-success">
 						<i class="fa-solid fa-user fa-3x"></i><br>
 						<p class="text-center fs-4">
-							User<br>45
+							User<br><%userDAO daou = new userDAO(DBConnect.getConn()); %>
+							<%=daou.getUserCount() %>
 						</p>
 					</div>
 				</div>
@@ -62,7 +70,8 @@
 					<div class="card-body text-center text-success">
 						<i class="fa-regular fa-calendar-check fa-3x"></i><br>
 						<p class="text-center fs-4">
-							Appointment<br>50
+							Appointment<br><%appointmentDAO dao1 = new appointmentDAO(DBConnect.getConn()); %>
+							<%= dao1.getAppointmentCount() %>
 						</p>
 					</div>
 				</div>
@@ -76,7 +85,8 @@
 					<div class="card-body text-center text-success">
 						<i class="fa-solid fa-stethoscope fa-3x"></i><br>
 						<p class="text-center fs-4">
-							Specialist<br>10
+							Specialist<br><%specialistDAO dao2 = new specialistDAO(DBConnect.getConn()); %>
+							<%=dao2.getSpecialistCount() %>
 						</p>
 					</div>
 				</div>

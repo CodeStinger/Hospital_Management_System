@@ -1,3 +1,7 @@
+<%@page import="com.dao.appointmentDAO"%>
+<%@page import="com.db.DBConnect"%>
+<%@page import="com.dao.doctorDAO"%>
+<%@page import="com.entity.Doctor"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -28,7 +32,11 @@
 				<div class="card paint-card">
 					<div class="card-body text-center text-success">
 						<i class="fas fa-user-md fa-3x"></i><br>
-						<p class="fs-4 text-center">Doctor<br>12</p>
+						<p class="fs-4 text-center">Doctor<br>
+						<%doctorDAO dao = new doctorDAO(DBConnect.getConn()); 
+							%><%=dao.getDoctorCount() %>
+						
+						</p>
 						
 					</div>
 				</div>
@@ -38,7 +46,12 @@
 				<div class="card paint-card">
 					<div class="card-body text-center text-success">
 						<i class="fa-regular fa-calendar-check fa-3x"></i><br>
-						<p class="fs-4 text-center">Total Appointment<br>120</p>
+						<p class="fs-4 text-center">Total Appointment<br>
+						<%appointmentDAO dao1 = new appointmentDAO(DBConnect.getConn()); 
+						Doctor d = (Doctor)session.getAttribute("DoctorObj");
+						%>
+						<%=dao1.getAppointmentCountForSpecificDoctor(d.getId()) %>
+						</p>
 						
 					</div>
 				</div>
